@@ -29,7 +29,11 @@ SECRET_KEY = 'django-insecure-6)*9yg#d9+*lphzx2_k3#21*5#(myv@j9&+bu4ecb7=$9o(qur
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['varad143.onrender.com', '127.0.0.1', 'localhost']
+ALLOWED_HOSTS = [
+    'localhost',
+    '127.0.0.1',
+    'varad.onrender.com',     
+]
 
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 
