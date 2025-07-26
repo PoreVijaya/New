@@ -1,0 +1,94 @@
+{% load static %}
+{% include 'base.html' %}
+{% include 'navigation.html' %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Animated Hearts</title>
+    <style>
+          body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+            background: linear-gradient(to right, #ee9ca7, #ffdde1);
+            font-family: Arial, sans-serif;
+            position: relative;
+        }
+
+        h1 {
+            color: dark;
+            text-align: center;
+            padding-top: 100px;
+            z-index: 10;
+            position: relative;
+        }
+        .heart {
+            position: absolute;
+            bottom: -50px;
+            font-size: 24px;
+            animation: floatUp 5s linear infinite;
+            color: red;
+            opacity: 0.8;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 0.8;
+            }
+            50% {
+                opacity: 1;
+                transform: translateY(-200px) scale(1.5);
+            }
+            100% {
+                transform: translateY(-600px) scale(0.8);
+                opacity: 0;
+            }
+        }
+
+
+         h1 a {
+            text-decoration: none;
+            margin: 0 10px;
+            color: #333;
+            font-weight: bold;
+        }
+
+        h1 a:hover {
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="font-weight: bold; margin-bottom: -50px;">HAPPY ANNIVERSARY</h1>
+
+        <h1 style="margin-top: 0;">
+            <a href="{% url 'a' %}" style="text-decoration: none; color: inherit;">SHARAD</a>
+        </h1>
+
+        <!-- Heart Image -->
+        <div style="text-align: center; margin: 5px 0;">
+            <img src="{% static 'images/heart.jpg' %}" alt="Heart" style="height: 200px;">
+        </div>
+
+        <h1 style="margin-top: 0;">
+            <a href="{% url 'img' %}" style="text-decoration: none; color: inherit;">
+                <h3 style="margin-top: -90px;">Hey sweetheart!!! Here we are....</h3>
+            </a>
+        </h1>
+
+
+    <!-- Multiple heart elements with different left positions and delays -->
+    <div class="heart" style="left: 10%; animation-delay: 0s;">❤️</div>
+    <div class="heart" style="left: 30%; animation-delay: 1s;">💖</div>
+    <div class="heart" style="left: 50%; animation-delay: 2s;">💕</div>
+    <div class="heart" style="left: 70%; animation-delay: 1.5s;">💖</div>
+    <div class="heart" style="left: 90%; animation-delay: 0.5s;">❤️</div> 
+
+</body>
+</html>
+
+{% endblock content %}

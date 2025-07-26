@@ -1,0 +1,40 @@
+{% load static %}
+{% include 'base.html' %}
+{% include 'navigation.html' %}
+
+{% block content %}
+<style>
+    body {
+        background: linear-gradient(to right, #ee9ca7, #ffdde1);
+        margin: 0;
+        padding: 0;
+    }
+
+    .image-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        padding: 40px;
+        flex-wrap: wrap;
+    }
+
+    .image-container img {
+        max-width: 300px;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s ease;
+    }
+
+    .image-container img:hover {
+        transform: scale(1.05);
+    }
+</style>
+
+<div class="image-container">
+    <img src="{% static 'images/A1.jpeg' %}" alt="A1 Image">
+    <img src="{% static 'images/A2.png' %}" alt="A2 Image">
+    <img src="{% static 'images/A1.jpeg' %}" alt="A1 Image">
+</div>
+{% endblock content %}
